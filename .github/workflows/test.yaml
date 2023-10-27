@@ -1,18 +1,14 @@
-name: testing workflow
+name: Node.js CI on Main Branch
 
-push:
-     branches:
-         -main
-
-workflow_dispatch:
-
+on:
+  push:
+    branches:
+      - main
 
 jobs:
-  
-    myfirstjob:
-         runs-on: ubuntu-latest
-         steps:
-            -name: clone my repo
-             uses: actions/checkout@v4
-      
+  build:
+    runs-on: ubuntu-latest
 
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
